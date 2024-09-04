@@ -1,0 +1,15 @@
+
+b
+java:S2095a"EUse try-with-resources or close this "Scanner" in a "finally" clause.(ë¶…†8òÊ©š2
+b
+java:S2095s"EUse try-with-resources or close this "Scanner" in a "finally" clause.(ë¶…†8òÊ©š2
+P
+java:S1128"3Remove this unused import 'java.io.BufferedReader'.(€é²Å8üÊ©š2
+\
+java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ8üÊ©š2
+Q
+java:S1128"/Remove this unused import 'java.io.FileReader'.(Â¡¢äşÿÿÿÿ8üÊ©š2
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8üÊ©š2
+U
+java:S1144C"8Remove this unused private "addWrongCombination" method.(úÛÒç8üÊ©š2

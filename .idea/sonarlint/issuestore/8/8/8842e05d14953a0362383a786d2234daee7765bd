@@ -1,0 +1,18 @@
+
+Y
+java:S1854	"<Remove this useless assignment to local variable "textPath".(ì¯ŞÂ8¹ß²¡š2
+^
+java:S1075	"ARefactor your code to get this URI from a customizable parameter.(ì¯ŞÂ8ñ‚İš2
+J
+java:S1481	"-Remove this unused "textPath" local variable.(ì¯ŞÂ8ºß²¡š2
+c
+java:S1075
+"ARefactor your code to get this URI from a customizable parameter.(ıÍÉıÿÿÿÿ8ñ‚İš2
+c
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(¸–Ø»ûÿÿÿÿ8ñ‚İš2
+c
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(¹×§šÿÿÿÿÿ8ñ‚İš2
+X	java:S125"<This block of commented-out lines of code should be removed.(Û§š8»ß²¡š2
+X	java:S125"<This block of commented-out lines of code should be removed.(¼ğ©‹8½æ³¡š2
+X	java:S125"<This block of commented-out lines of code should be removed.(·„ª¤8ê€¶¡š2
+L	java:S106""+Replace this use of System.out by a logger.(²Õ·Àøÿÿÿÿ8•„¹¡š2

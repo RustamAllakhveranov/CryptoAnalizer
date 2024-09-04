@@ -1,0 +1,7 @@
+
+Š
+java:S1319."mThe return type of this method should be an interface such as "Set" rather than the implementation "HashSet".(×ìëÙ8 ğŸ¡š2
+
+java:S13199"nThe type of "rightCombinations" should be an interface such as "Set" rather than the implementation "HashSet".(ÿ’Ô­úÿÿÿÿ8 ğŸ¡š2
+F
+java:S1128	")Remove this unused import 'java.io.File'.(†Ğ¥Å8µä ¡š2
