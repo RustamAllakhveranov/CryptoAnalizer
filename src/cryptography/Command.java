@@ -1,7 +1,5 @@
 package cryptography;
 
-import entity.Result;
-
 public interface Command {
-    Result execute(String[] parameters);
+    void execute(String[] parameters);
 }

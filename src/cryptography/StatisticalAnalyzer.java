@@ -1,39 +1,33 @@
 package cryptography;
 
-import entity.Result;
-import entity.ResultCode;
 import file_manager.FileManager;
 import grammar.Alphabet;
-import grammar.Languages;
 
-import java.io.File;
 import java.util.HashSet;
+import java.util.Set;
 
 public class StatisticalAnalyzer extends AbstractCommand {
 
-    public Result execute(String[] arguments) {
-        String language = arguments[0];
-        String inputPath = arguments[1];
-        String outputPath = arguments[2];
-        String sampleFilePath = arguments[3];
+    public void execute(String[] arguments) {
+        String inputPath = arguments[0];
+        String outputPath = arguments[1];
+        String sampleFilePath = arguments[2];
         String encryptedText = FileManager.readFile(inputPath);
 
-        int key = findMostLikelyKey(language, encryptedText, sampleFilePath, 3);
-        String content = shift(language, encryptedText, key);
+        int key = findMostLikelyKey(encryptedText, sampleFilePath, 3);
+        String content = shift(encryptedText, key);
         FileManager.writeFile(content, outputPath);
-        return new Result("Расшифровка файла методом статистического анализа завершена!", ResultCode.SUCCESS);
     }
 
-    public int findMostLikelyKey(String language, String encryptedText, String sampleFilePath, int combinationLength) {
+    public int findMostLikelyKey(String encryptedText, String sampleFilePath, int combinationLength) {
         String sample = FileManager.readFile(sampleFilePath);
-        HashSet<String> rightCombinations = getRightCombinations(sample, combinationLength);
-        Alphabet alphabet = Languages.getGrammar(language).getAlphabet();
-        int matchesForKey = 0;
+        Set<String> rightCombinations = getRightCombinations(sample, combinationLength);
+        int matchesForKey;
         int maxMatches = -1;
         String decryptedTest;
         int mostLikelyKey = 0;
-        for (int key = 1; key < alphabet.asCharArray().length; key++) {
-            decryptedTest = shift(language, encryptedText, key);
+        for (int key = 1; key < Alphabet.asCharArray().length; key++) {
+            decryptedTest = shift(encryptedText, key);
             matchesForKey = countCombinationMatches(decryptedTest, rightCombinations, combinationLength);
             if (matchesForKey > maxMatches) {
                 maxMatches = matchesForKey;
@@ -43,9 +37,9 @@ public class StatisticalAnalyzer extends AbstractCommand {
         return mostLikelyKey;
     }
 
-    public HashSet<String> getRightCombinations(String sample, int combinationLength) {
+    public Set<String> getRightCombinations(String sample, int combinationLength) {
 
-        HashSet<String> rightCombinations = new HashSet<>();
+        Set<String> rightCombinations = new HashSet<>();
         String combination;
         for (int i = 0; i < sample.length() - combinationLength; i++) {
             combination = sample.substring(i, i + combinationLength);
@@ -54,7 +48,7 @@ public class StatisticalAnalyzer extends AbstractCommand {
         return rightCombinations;
     }
 
-    public int countCombinationMatches(String text, HashSet<String> rightCombinations, int combinationLength) {
+    public int countCombinationMatches(String text, Set<String> rightCombinations, int combinationLength) {
         int combinationMatches = 0;
         String combination;
         for (int i = 0; i < text.length() - combinationLength; i++) {
